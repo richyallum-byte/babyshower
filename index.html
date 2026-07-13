@@ -22,16 +22,21 @@
     min-height: 100vh;
     font-family: var(--main-font);
     overflow-x: hidden;
+    background-color: #fdfbf7;
   }
 
- /* Static background, full image shown, no stretching */
-  body {
+  /* FIXED BACKGROUND CONTAINER */
+  .bg-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps it behind everything */
     background-image: url("baby.jpeg");
     background-position: center center;
-    background-size: auto;        /* Shows image at original proportions */
-    background-attachment: fixed; /* Keeps it static while scrolling */
-    background-repeat: repeat;    /* Repeats the pattern if the screen is larger than the image */
-    background-color: #fdfbf7;    /* Fallback color */
+    background-size: auto; /* Keeps original size */
+    background-repeat: repeat; /* Tiles the image */
   }
 
   body.invite-closed { overflow: hidden; height: 100vh; }
@@ -58,12 +63,7 @@
     border-radius: 8px;
   }
 
-h1 { 
-  font-size: 28px; 
-  margin-bottom: 15px; 
-  color: #DBCDF0; /* This is the pastel purple color */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Optional: makes it easier to read on white */
-}
+  h1 { font-size: 28px; margin-bottom: 15px; color: #DBCDF0; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
   h2 { font-size: 18px; color: var(--accent-green); margin-bottom: 10px; text-transform: uppercase; }
   p { font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 20px; }
 
@@ -77,7 +77,6 @@ h1 {
     background: #fdfbf7; z-index: 9999; transition: opacity 0.8s ease;
   }
 
-  /* Energetic balloon movement */
   .balloon-wrapper { cursor: pointer; text-align: center; animation: super-bounce 1s infinite ease-in-out; }
   @keyframes super-bounce {
     0%, 100% { transform: translateY(0) scale(1); }
@@ -87,6 +86,9 @@ h1 {
 </head>
 
 <body class="invite-closed">
+
+<!-- Background div added here -->
+<div class="bg-fixed"></div>
 
 <div id="envelope">
   <div class="balloon-wrapper" onclick="openInvite()">
@@ -98,8 +100,8 @@ h1 {
 <div class="content-wrapper">
   <section>
     <div class="card">
-      <h2>One Baby Shower and Two Birthdays</h2>
       <img src="bunting.jpeg" alt="Bunting">
+      <h2>One Baby Shower and Two Birthdays</h2>
       <h1>Saturday</h1>
       <h1>8th August 2026</h1>
       <h1>3pm onwards</h1>
