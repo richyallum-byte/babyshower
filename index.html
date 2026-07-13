@@ -210,7 +210,7 @@ nav a {
             <h2>Two Birthdays and One Baby Shower</h2>
             <h1>When: Saturday, 8th August 2026 from 3pm</h1>
          <p>(The Gender Reveal will be around 5pm)</p>
-            <p>Join us at our place for cake, barbeque, games all in one! Please bring a dish or drinks to help us out. Kids are more than welcome to join! 🧸</p>
+            <p>Join us at our place for cake, barbeque, and games all in one! Please bring a dish or drinks to help us out. Kids are more than welcome to join! 🧸</p>
         </div>
     </section>
 
@@ -224,19 +224,31 @@ nav a {
   </div>
 </section>
 
-     <section id="location">
-      <div class="card"> 
+<section id="location">
+    <div class="card">  
         <h2>Where</h2>
         <h1>13 Normanhurst</h1>
-        <div style="margin-top: 20px; margin-bottom: 10px;"> 
-          <img src="13 Normanhurst.png">
+        <p>Braintree<br>8th August 2026<br>3pm onwards</p>
+        
+        <!-- Embedded Map -->
+        <div style="margin: 20px 0; border-radius: 8px; overflow: hidden; border: 1px solid #ccc;">
+            <iframe 
+                width="100%" 
+                height="300" 
+                frameborder="0" 
+                style="border:0" 
+                src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=13+Normanhurst,Braintree,UK" 
+                allowfullscreen>
+            </iframe>
         </div>
+
         <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
-          <a id="addToGoogle" class="btn" target="_blank">Add to Google Calendar</a>
-          <a class="btn" href="wedding.ics" download>Add to Apple/Outlook</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=13+Normanhurst,Braintree,UK" target="_blank">View on Maps</a>
+            <a id="addToGoogle" class="btn" target="_blank">Add to Google Calendar</a>
+            <a class="btn" href="wedding.ics" download>Add to Apple/Outlook</a>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
       
 
     <section id="with-love">
