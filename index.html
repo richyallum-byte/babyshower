@@ -9,14 +9,21 @@
 
 <style>
 :root {
- --cream: #fdfbf7;
---pastel-yellow: #FAEDCB;
-            --pastel-green: #C9E4DE;
-            --pastel-blue: #C6DEF1;
-            --pastel-purple: #DBCDF0;
-            --pastel-pink: #F2C6DE;
-            --pastel-orange: #F7D9C4;
-            --text-dark: #333;  
+  --cream: #fdfbf7;
+  --pastel-yellow: #FAEDCB;
+  --pastel-green: #C9E4DE;
+  --pastel-blue: #C6DEF1;
+  --pastel-purple: #DBCDF0;
+  --pastel-pink: #F2C6DE;
+  --pastel-orange: #F7D9C4;
+  --text-dark: #333;
+  
+  /* Add these lines to map your theme to the variables used by your buttons */
+  --paper: #fdfbf7;      /* Matches your background */
+  --accent-red: #D8A4A4; /* Example soft pink/red - change this to your preferred color */
+  --accent-green: #7A9E96; /* Example muted green */
+  --ink: #333;           /* Dark text color */
+  --champagne: #fdfbf7;  /* Matches your background */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,9 +118,19 @@ h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; margin: 
 .carousel { display: flex; gap: 12px; overflow-x: auto; padding: 0 10% 20px 10%; scroll-snap-type: x mandatory; scrollbar-width: none; }
 
 .btn {
-  display: inline-block; margin-top: 15px; padding: 15px 35px; background-color: var(--accent-red); color: var(--paper);
-  border: none; border-radius: 2px; text-decoration: none; text-transform: uppercase; font-size: 13px; letter-spacing: 2px;
-  font-weight: 600; cursor: pointer;
+  display: inline-block; 
+  margin-top: 15px; 
+  padding: 15px 35px; 
+  background-color: var(--accent-red); /* This will now look for --accent-red */
+  color: var(--paper);                 /* This will now look for --paper */
+  border: none; 
+  border-radius: 2px; 
+  text-decoration: none; 
+  text-transform: uppercase; 
+  font-size: 13px; 
+  letter-spacing: 2px;
+  font-weight: 600; 
+  cursor: pointer;
 }
 
 nav {
@@ -181,8 +198,6 @@ nav a {
 <div id="envelope">
   <div class="balloon-container" onclick="openInvite()">
     <div class="balloon">🎈</div>
-    <div class="balloon">🎈</div>
-    <div class="balloon">🎈</div>
     <p class="click-text">Pop to enter</p>
   </div>
 </div>
@@ -193,16 +208,16 @@ nav a {
     <section id="hero">
         <div class="card">
             <h2>Two Birthdays and One Baby Shower</h2>
-            <h1>When: Saturday, 8th August 2026 from 3pm (The Gender Reveal will be around 5pm)</h1> 
-            <p>Join us at our place for cake, games, a big gender reveal, and a massive celebrate-everything party! Please bring a dish or drinks to help us out. Kids are more than welcome to join the fun! Bring the whole family along to celebrate with us. 🧸</p>
+            <h1>When: Saturday, 8th August 2026 from 3pm</h1>
+         <p>(The Gender Reveal will be around 5pm)</p>
+            <p>Join us at our place for cake, barbeque, games all in one! Please bring a dish or drinks to help us out. Kids are more than welcome to join! 🧸</p>
         </div>
     </section>
 
     <section id="giving">
   <div class="card">
     <h1>Gifting</h1>
-    <p>Please, no birthday gifts for either of us—your company is all we want! If you would like to help us prepare for the baby instead, you can view our little registry here:</p> 
-    <p>We look forward to stocking our home with the tools for a lifetime of shared meals and memories.</p>
+    <p>Please, no birthday gifts for either of us, your company is all we want! If you would like to help us prepare for the baby, you can view our registry here:</p> 
     <div style="margin: 10px 0;">
     </div>
     <a class="btn" href="https://mycrib.uk/baby-allum-wishlist" target="_blank">Baby Registry</a>
