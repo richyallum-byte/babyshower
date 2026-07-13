@@ -2,375 +2,110 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Richard & Janine</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --cream: #fdfbf7;
-  --pastel-yellow: #FAEDCB;
-  --pastel-green: #C9E4DE;
-  --pastel-blue: #C6DEF1;
-  --pastel-purple: #DBCDF0;
-  --pastel-pink: #F2C6DE;
-  --pastel-orange: #F7D9C4;
-  --text-dark: #333;
-  
-  /* Add these lines to map your theme to the variables used by your buttons */
-  --paper: #ffffff;      /* Matches your background */
-  --accent-red: #D8A4A4; /* Example soft pink/red - change this to your preferred color */
-  --accent-green: #7A9E96; /* Example muted green */
-  --ink: #333;           /* Dark text color */
-  --champagne: #fdfbf7;  /* Matches your background */
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { 
-  scroll-behavior: smooth; 
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
-}
-
-<style>
   :root {
-    --main-font: 'Fredoka One', cursive;
+    --white: #ffffff;
     --accent-red: #D8A4A4;
     --accent-green: #7A9E96;
+    --ink: #333;
+    --main-font: 'Fredoka One', cursive;
   }
 
-  body { 
-    font-family: var(--main-font); 
-    color: #444; /* Slightly softer than pure black */
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Make headings extra poppy */
-  h1, h2 { 
-    color: var(--accent-green);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.2;
-  }
-  
-  .btn {
+  html, body { 
+    width: 100%; 
+    min-height: 100vh;
     font-family: var(--main-font);
-    letter-spacing: 1px;
-    font-size: 14px;
-    border-radius: 50px; /* Makes the buttons look bubbly too */
+    background-color: #fdfbf7;
+    overflow-x: hidden;
   }
 
-body.invite-closed { 
-  overflow: hidden; 
-  height: 100vh; 
-  position: fixed; /* Prevents background shifting while envelope is up */
-}
+  body.invite-closed { overflow: hidden; height: 100vh; }
 
-.content-wrapper { 
-  position: relative; 
-  z-index: 1; 
-  padding-bottom: 120px; 
-  width: 100%;
-  overflow-x: clip; /* Stricter than 'hidden' - prevents the browser from expanding the width */
-}
+  .content-wrapper { width: 100%; padding: 20px; padding-bottom: 120px; }
   
-section { padding: 40px 20px; display: flex; justify-content: center; text-align: center; }
+  section { display: flex; justify-content: center; margin-bottom: 20px; }
 
-.card {
-  transform: rotate(-1deg);
-  border-radius: 20px; /* Rounded corners match the bubbly font */
-}
+  .card {
+    background: var(--white); /* Solid white, no transparency */
+    width: 100%; 
+    max-width: 600px; 
+    padding: 30px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Standard shadow, not wonky */
+    text-align: center;
+  }
 
-/* GENERAL IMAGE FIX (For full-width images) */
-.card img {
-  width: 101%; margin-left: -0.5%; max-width: 101%; height: auto;
-  display: block; border-radius: 2px; object-fit: cover; 
-  background-color: var(--paper); outline: 2px solid var(--paper); outline-offset: -2px;
-}
-/* Update your existing CSS line to include #giving img */
-#Boba img, #with-love img, #giving img {
-  width: 80% !important; 
-  max-width: 500px !important;
-  margin: 20px auto !important; 
-  outline: none !important;
-  object-fit: contain !important;
-  display: block;
-}
-  
-/* BOBA & SIGNATURE CENTER FIX */
-#Boba img, #with-love img {
-  width: 80% !important; 
-  max-width: 500px !important;
-  margin: 0 auto !important; 
-  outline: none !important;
-  object-fit: contain !important;
-}
+  /* Centered images */
+  .card img { 
+    display: block; 
+    margin: 20px auto; 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+  }
 
-  .full-width-img {
-  width: calc(100% + 40px); /* Extends it to the edges of the padding */
-  margin-left: -20px;       /* Negates the card's inner padding */
-  margin-right: -20px;      /* Negates the card's inner padding */
-  display: block;
-}
-  
-/* CAROUSEL IMAGE RESET */
-.carousel img {
-  width: 70vw !important; margin: 0 !important; outline: none !important;
-}
+  h1 { font-size: 28px; margin-bottom: 15px; color: var(--ink); }
+  h2 { font-size: 18px; color: var(--accent-green); margin-bottom: 10px; }
+  p { font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 20px; }
 
-p { font-size: clamp(16px, 1.1rem, 19px); line-height: 1.6; max-width: 100%; margin: 0 auto 1.2em auto; }
+  .btn {
+    display: inline-block; padding: 15px 30px; background: var(--accent-red);
+    color: white; text-decoration: none; font-size: 16px; border-radius: 50px;
+  }
 
-h1 { font-size: clamp(28px, 6vw, 48px); line-height: 1.1; margin-bottom: 24px; font-weight: 400; color: var(--ink); }
-#hero h1 { margin-bottom: 2px; }
-#hero h1:last-of-type { margin-bottom: 24px; }
-
-h2 { font-size: clamp(18px, 4vw, 22px); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 20px; color: var(--accent-green); }
-h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; margin: 25px 0 10px 0; color: var(--accent-red); }
-
-.schedule-item { margin-bottom: 25px; }
-.time { font-weight: 600; color: var(--accent-green); display: block; margin-bottom: 5px; }
-
-#countdown { margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-.count { padding: 10px; min-width: 70px; border-bottom: 2px solid var(--accent-red); }
-.count span { font-size: 28px; display: block; font-weight: 600; color: var(--accent-red); }
-.count-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
-
-.carousel-container { margin: 30px -5% 0 -5%; overflow: hidden; }
-.carousel { display: flex; gap: 12px; overflow-x: auto; padding: 0 10% 20px 10%; scroll-snap-type: x mandatory; scrollbar-width: none; }
-
-.btn {
-  display: inline-block; 
-  margin-top: 15px; 
-  padding: 15px 35px; 
-  background-color: var(--accent-red); /* This will now look for --accent-red */
-  color: var(--paper);                 /* This will now look for --paper */
-  border: none; 
-  border-radius: 2px; 
-  text-decoration: none; 
-  text-transform: uppercase; 
-  font-size: 13px; 
-  letter-spacing: 2px;
-  font-weight: 600; 
-  cursor: pointer;
-}
-
-nav {
-  position: fixed; bottom: 0; left: 0; width: 100%; background: var(--champagne);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  display: none; justify-content: space-around; align-items: stretch; height: 65px; 
-  padding-bottom: env(safe-area-inset-bottom); border-top: 1px solid rgba(0,0,0,0.1); z-index: 1000;
-}
-
-nav a {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  text-decoration: none; color: var(--ink); font-size: 11px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;
-}
-
-#envelope {
-  position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
-  background: #fdfbf7; /* Should match your page background */
-  z-index: 99999; transition: opacity 0.8s ease;
-}
-
-.balloon-container {
-  display: flex; gap: 20px; cursor: pointer; flex-direction: column; align-items: center;
-}
-
-.balloon {
-  font-size: 80px;
-  animation: bounce 2s infinite ease-in-out;
-}
-
-.click-text {
-  text-transform: uppercase; letter-spacing: 3px; opacity: 0.6; font-size: 14px;
-  margin-top: 20px; cursor: pointer;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.video-container { position: relative; width: 100%; max-width: 315px; margin: 30px auto 0; aspect-ratio: 9 / 16; border-radius: 8px; overflow: hidden; }
-
-.bg-fixed {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100vw; 
-  height: 100vh; /* Ensure it covers full viewport height */
-  z-index: -1;
-  background-color: var(--paper);
-  background-image: linear-gradient(rgba(253, 250, 247, 0.75), rgba(253, 250, 247, 0.75)), url("baby.jpeg");
-  background-position: top center; 
-  background-repeat: repeat; 
-  background-size: 1000px auto;
-  pointer-events: none; /* Makes sure clicks pass through to the buttons */
-}
-  
+  #envelope {
+    position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
+    background: #fdfbf7; z-index: 9999; transition: opacity 0.8s ease;
+  }
 </style>
-  
 </head>
 
 <body class="invite-closed">
 
-<div class="bg-fixed"></div>
-
 <div id="envelope">
-  <div class="balloon-container" onclick="openInvite()">
-    <div class="balloon">🎈</div>
-    <p class="click-text">Pop to enter</p>
+  <div style="cursor: pointer; text-align: center;" onclick="openInvite()">
+    <div style="font-size: 80px;">🎈</div>
+    <p>Pop to enter</p>
   </div>
 </div>
-
-<audio id="music" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
 
 <div class="content-wrapper">
-    <section id="hero">
-        <div class="card">
-            <h2>One Baby Shower and Two Birthdays</h2>
-              <img src="bunting.jpeg" alt="Baby items" class="full-width-img">
-            <h1>Saturday</h1>
-          <h1>8th August 2026</h1>
-          <h1>3pm onwards</h1>
-            <p>Join us at our place for cake, barbeque, and games all in one! (the gender reveal will be around 5pm) If you have a favourite dish you'd love to share feel free to bring it along. Kids are more than welcome to join! 🧸</p>
-        </div>
-    </section>
+  <section>
+    <div class="card">
+      <img src="bunting.jpeg" alt="Bunting">
+      <h2>One Baby Shower and Two Birthdays</h2>
+      <h1>Saturday, 8th August 2026</h1>
+      <p>Join us at our place for cake, barbeque, and games all in one!</p>
+    </div>
+  </section>
 
   <section id="giving">
-  <div class="card">
-    <h2>Gifting</h2>
-    <h1>Things for Baby</h1>
-    
-    <img src="toys.jpeg" alt="Baby items" style="width: 100%; max-width: 200px; border-radius: 8px;">
-
-    <p>Please, no birthday gifts for either of us, your company is all we want! If you would like to help us prepare for the baby, you can view our registry here:</p> 
-    
-    <a class="btn" href="https://mycrib.uk/baby-allum-wishlist" target="_blank">Baby Registry</a>
-  </div>
-</section>
-
-<section id="location">
-    <div class="card">  
-        <h2>Where</h2>
-        <h1>13 Normanhurst</h1>
-        <p>Hutton, Essex, CM13 1BG</p>
-        
-        <!-- Embedded Map -->
-        <div style="margin: 20px 0; border-radius: 8px; overflow: hidden; border: 1px solid #ccc;">
-            <iframe 
-                width="100%" 
-                height="300" 
-                frameborder="0" 
-                style="border:0" 
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.517363532642!2d0.33987557704487426!3d51.632049671841955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8bf05639a2b1d%3A0x786defd518cca0cc!2s13%20Normanhurst%2C%20Hutton%2C%20Brentwood%20CM13%201BG!5e0!3m2!1sen!2suk!4v1783979806200!5m2!1sen!2suk">
-            </iframe>
-        </div>
-
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
-            <a class="btn" href="https://maps.app.goo.gl/vBVRj1EuShbWpgBr6" target="_blank">View on Maps</a>
-        </div>
-    </div>
-</section>
-      
-
-<section id="with-love">
     <div class="card">
-        <h2>With love</h2>
-            <img src="richardjanine.png" alt="Richard and Janine" style="width: 100%; display: block;">
+      <h2>Gifting</h2>
+      <h1>Things for Baby</h1>
+      <img src="toys.jpeg" alt="Baby items">
+      <p>Please, no birthday gifts for either of us, your company is all we want!</p>
+      <a class="btn" href="https://mycrib.uk/baby-allum-wishlist" target="_blank">Baby Registry</a>
     </div>
-</section>
+  </section>
 </div>
-
-<nav id="bottomNav">
-  <a href="#giving">Gifting</a>
-</nav>
 
 <script>
 function openInvite() {
-  const music = document.getElementById("music");
-
-
-  // 2. Start transition
-  document.getElementById("envelope").style.opacity = "0";
-  
+  const env = document.getElementById("envelope");
+  env.style.opacity = "0";
   setTimeout(() => {
-    document.getElementById("envelope").style.display = "none";
-    
-    // 3. Reset Body state
+    env.style.display = "none";
     document.body.classList.remove("invite-closed");
-    // Force the scroll to the top and prevent the "jump" zoom
-    window.scrollTo(0, 0); 
-    
-    document.getElementById("bottomNav").style.display = "flex";
-    
-    // 4. Play Music
-    if (music) {
-      music.play().catch(e => {
-        console.log("Music will play on next tap");
-      });
-    }
   }, 800);
 }
-
-// Countdown Logic
-const weddingDate = new Date("2026-02-20T11:30:00").getTime();
-function updateCountdown() {
-  const diff = weddingDate - new Date().getTime();
-  if (diff < 0) { 
-    document.getElementById("countdown").innerHTML = "Today is the day!"; 
-    return; 
-  }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  document.getElementById("countdown").innerHTML = `
-    <div class="count"><span>${days}</span><div class="count-label">Days</div></div>
-    <div class="count"><span>${hrs}</span><div class="count-label">Hours</div></div>
-    <div class="count"><span>${mins}</span><div class="count-label">Mins</div></div>`;
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-// Calendar Link
-document.getElementById("addToGoogle").href = "https://www.google.com/calendar/render?action=TEMPLATE&text=Richard+%26+Janine+Wedding&dates=20260220T113000/20260220T134500&location=Braintree+Town+Hall";
-
-// Video Intersection Observer
-const videoIframe = document.getElementById('weddingVideo');
-const playObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        if (entry.isIntersecting) {
-          videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-        }
-      }, 1000); 
-    } else {
-      videoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-    }
-  });
-}, { threshold: 0.5 });
-
-if (videoIframe) {
-  playObserver.observe(videoIframe);
-}
-
-// Visibility Handler: Stop music when user leaves the tab
-document.addEventListener("visibilitychange", function() {
-  const music = document.getElementById("music");
-  if (document.hidden) {
-    if (music) music.pause();
-  } else {
-    // Only resume if the envelope is already gone
-    if (document.getElementById("envelope").style.display === "none") {
-      if (music) music.play().catch(e => console.log("Resume blocked"));
-    }
-  }
-});
 </script>
 
-  
 </body>
 </html>
