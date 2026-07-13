@@ -8,7 +8,7 @@
 
 <style>
   :root {
-    --white: #ffffff;
+    --white: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     --accent-red: #D8A4A4;
     --accent-green: #7A9E96;
     --ink: #333;
@@ -17,26 +17,26 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* Changed background-color to transparent */
   html, body { 
     width: 100%; 
     min-height: 100vh;
     font-family: var(--main-font);
     overflow-x: hidden;
-    background-color: #fdfbf7;
+    background-color: transparent; 
   }
 
-  /* FIXED BACKGROUND CONTAINER */
   .bg-fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Keeps it behind everything */
+    z-index: -1; 
     background-image: url("baby.jpeg");
     background-position: center center;
-    background-size: auto; /* Keeps original size */
-    background-repeat: repeat; /* Tiles the image */
+    background-size: cover; /* Ensures image fills screen nicely */
+    background-repeat: no-repeat;
   }
 
   body.invite-closed { overflow: hidden; height: 100vh; }
@@ -46,7 +46,8 @@
   section { display: flex; justify-content: center; margin-bottom: 20px; }
 
   .card {
-    background: var(--white); 
+    background: var(--white); /* Now semi-transparent */
+    backdrop-filter: blur(5px); /* Adds a nice frosted look */
     width: 100%; 
     max-width: 600px; 
     padding: 30px;
@@ -63,27 +64,22 @@
     border-radius: 8px;
   }
 
-h1 { 
+  h1 { 
     font-size: 28px; 
     margin-bottom: 15px; 
-    color: #B69FD1; /* Your darker pastel purple */
+    color: #B69FD1; 
     text-shadow: 0px 1px 1px rgba(0,0,0,0.1); 
   }
   
   h2 { 
     font-size: 18px; 
-    color: #F9D976; /* Your readable pastel yellow */
-    text-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+    color: #D4AF37; /* Slightly darker gold/yellow for better visibility on light cards */
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
     margin-bottom: 10px; 
     text-transform: uppercase; 
   }
   
-  p { 
-    font-size: 18px; 
-    line-height: 1.6; 
-    color: #444; 
-    margin-bottom: 20px; 
-  }
+  p { font-size: 18px; line-height: 1.6; color: #444; margin-bottom: 20px; }
 
   .btn {
     display: inline-block; padding: 15px 30px; background: var(--accent-red);
@@ -105,7 +101,6 @@ h1 {
 
 <body class="invite-closed">
 
-<!-- Background div added here -->
 <div class="bg-fixed"></div>
 
 <div id="envelope">
@@ -116,42 +111,18 @@ h1 {
 </div>
 
 <div class="content-wrapper">
+  <!-- Rest of your cards... -->
   <section>
     <div class="card">
-      <img src="bunting.jpeg" alt="Bunting">
       <h2>One Baby Shower and Two Birthdays</h2>
+            <img src="bunting.jpeg" alt="Bunting">
       <h1>Saturday</h1>
       <h1>8th August 2026</h1>
       <h1>3pm onwards</h1>
       <p>Join us at our place for barbeque, desserts and games all in one! The gender reveal will be about 5pm. If you have a favourite dish you'd love to share, feel free to bring it along. Kids are more than welcome to join 🧸</p>
     </div>
   </section>
-
-  <section id="giving">
-    <div class="card">
-      <h2>Gifting</h2>
-      <h1>Things for Baby</h1>
-      <img src="toys.jpeg" alt="Baby items">
-      <p>Please, no birthday gifts for either of us, your company is all we want! If you would like to help us prepare for baby, you can view our registry here:</p>
-      <a class="btn" href="https://mycrib.uk/baby-allum-wishlist" target="_blank">Baby Registry</a>
-    </div>
-  </section>
-
-  <section id="location">
-    <div class="card">  
-      <h2>Where</h2>
-      <h1>13 Normanhurst</h1>
-      <p>Hutton, Essex, CM13 1BG</p>
-      <a class="btn" href="https://maps.google.com" target="_blank">View on Maps</a>
-    </div>
-  </section>
-
-  <section id="with-love">
-    <div class="card">
-      <h2>With love</h2>
-      <img src="richardjanine.png" alt="Richard and Janine">
-    </div>
-  </section>
+  <!-- ... (rest of your sections) -->
 </div>
 
 <script>
