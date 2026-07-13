@@ -1,73 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Richard & Janine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --ink: #4a374a;             /* Deep purple for readability */
-  --paper: #fdfaf7;           /* Your existing light paper background */
-  --accent-green: #C9E4DE;    /* Pastel Mint */
-  --accent-red: #F2C6DE;      /* Pastel Pink */
-  --accent-rose: #C6DEF1;     /* Pastel Blue */
-  --champagne: #FAEDCB;       /* Pastel Yellow */
-  --accent-purple: #DBCDF0;    /* Pastel Purple */
-  --accent-orange: #F7D9C4;    /* Pastel Orange */
+  --ink: #4a374a;             /* Deep purple for readability */
+  --paper: #fdfaf7;           /* Your existing light paper background */
+  --accent-green: #C9E4DE;    /* Pastel Mint */
+  --accent-red: #F2C6DE;      /* Pastel Pink */
+  --accent-rose: #C6DEF1;     /* Pastel Blue */
+  --champagne: #FAEDCB;       /* Pastel Yellow */
+  --accent-purple: #DBCDF0;    /* Pastel Purple */
+  --accent-orange: #F7D9C4;    /* Pastel Orange */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { 
-  scroll-behavior: smooth; 
-  overflow-x: hidden;
-  width: 100%;
-  position: relative;
+html { 
+  scroll-behavior: smooth; 
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
-body { 
-  font-family: "Playfair Display", serif; 
-  color: var(--ink); 
-  min-height: 100vh; 
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+body { 
+  font-family: "Playfair Display", serif; 
+  color: var(--ink); 
+  min-height: 100vh; 
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-body.invite-closed { 
-  overflow: hidden; 
-  height: 100vh; 
-  position: fixed;
+body.invite-closed { 
+  overflow: hidden; 
+  height: 100vh; 
+  position: fixed;
 }
 
-.content-wrapper { 
-  position: relative; 
-  z-index: 1; 
-  padding-bottom: 120px; 
-  width: 100%;
-  overflow-x: clip;
+.content-wrapper { 
+  position: relative; 
+  z-index: 1; 
+  padding-bottom: 120px; 
+  width: 100%;
+  overflow-x: clip;
 }
-  
+  
 section { padding: 40px 20px; display: flex; justify-content: center; text-align: center; }
 
 .card {
-  background: var(--paper); padding: 10% 5%; width: 100%; max-width: 800px;
-  border-radius: 4px; box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 10px 30px rgba(0,0,0,0.05);
-  overflow: hidden;
+  background: var(--paper); padding: 10% 5%; width: 100%; max-width: 800px;
+  border-radius: 4px; box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 .card img {
-  width: 101%; margin-left: -0.5%; max-width: 101%; height: auto;
-  display: block; border-radius: 2px; object-fit: cover; 
-  background-color: var(--paper); outline: 2px solid var(--paper); outline-offset: -2px;
+  width: 101%; margin-left: -0.5%; max-width: 101%; height: auto;
+  display: block; border-radius: 2px; object-fit: cover; 
+  background-color: var(--paper); outline: 2px solid var(--paper); outline-offset: -2px;
 }
 
 #Boba img, #with-love img, #giving img {
-  width: 80% !important; 
-  max-width: 500px !important;
-  margin: 20px auto !important; 
-  outline: none !important;
-  object-fit: contain !important;
-  display: block;
+  width: 80% !important; 
+  max-width: 500px !important;
+  margin: 20px auto !important; 
+  outline: none !important;
+  object-fit: contain !important;
+  display: block;
 }
-  
+  
 .carousel img {
-  width: 70vw !important; margin: 0 !important; outline: none !important;
+  width: 70vw !important; margin: 0 !important; outline: none !important;
 }
 
 p { font-size: clamp(16px, 1.1rem, 19px); line-height: 1.6; max-width: 100%; margin: 0 auto 1.2em auto; }
@@ -91,33 +100,33 @@ h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 0.1em; margin: 
 .carousel { display: flex; gap: 12px; overflow-x: auto; padding: 0 10% 20px 10%; scroll-snap-type: x mandatory; scrollbar-width: none; }
 
 .btn {
-  display: inline-block; margin-top: 15px; padding: 15px 35px; background-color: var(--accent-red); color: #fff;
-  border: none; border-radius: 2px; text-decoration: none; text-transform: uppercase; font-size: 13px; letter-spacing: 2px;
-  font-weight: 600; cursor: pointer;
+  display: inline-block; margin-top: 15px; padding: 15px 35px; background-color: var(--accent-red); color: #fff;
+  border: none; border-radius: 2px; text-decoration: none; text-transform: uppercase; font-size: 13px; letter-spacing: 2px;
+  font-weight: 600; cursor: pointer;
 }
 
 nav {
-  position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  display: none; justify-content: space-around; align-items: stretch; height: 65px; 
-  padding-bottom: env(safe-area-inset-bottom); border-top: 1px solid rgba(0,0,0,0.05); z-index: 1000;
+  position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  display: none; justify-content: space-around; align-items: stretch; height: 65px; 
+  padding-bottom: env(safe-area-inset-bottom); border-top: 1px solid rgba(0,0,0,0.05); z-index: 1000;
 }
 
 nav a {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  text-decoration: none; color: var(--ink); font-size: 11px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: var(--ink); font-size: 11px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;
 }
 
 #envelope {
-  position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
-  background: var(--champagne);
-  z-index: 99999; transition: opacity 0.8s ease;
+  position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
+  background: var(--champagne);
+  z-index: 99999; transition: opacity 0.8s ease;
 }
 
 .seal {
-  width: 300px; height: 300px; background-color: var(--accent-red); border-radius: 50%;
-  cursor: pointer; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); 
-  animation: breathe 3s infinite ease-in-out; display: flex; align-items: center; justify-content: center; color: white;
+  width: 300px; height: 300px; background-color: var(--accent-red); border-radius: 50%;
+  cursor: pointer; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); 
+  animation: breathe 3s infinite ease-in-out; display: flex; align-items: center; justify-content: center; color: white;
 }
 @media(min-width:601px) { .seal { width: 400px; height: 400px; } }
 @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
@@ -125,8 +134,292 @@ nav a {
 .video-container { position: relative; width: 100%; max-width: 315px; margin: 30px auto 0; aspect-ratio: 9 / 16; border-radius: 8px; overflow: hidden; }
 
 .bg-fixed {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  z-index: -1; background-color: var(--paper);
-  pointer-events: none;
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1; background-color: var(--paper);
+  pointer-events: none;
 }
 </style>
+  
+</head>
+
+<body class="invite-closed">
+
+<div class="bg-fixed"></div>
+
+<div id="envelope">
+  <div style="text-align:center">
+    <div class="seal" onclick="openInvite()"></div>
+    <p style="text-transform:uppercase; letter-spacing:3px; margin-top:20px; opacity:0.6; font-size:12px">Tap to open</p>
+  </div>
+</div>
+
+<audio id="music" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
+
+<div class="content-wrapper">
+    <section id="hero">
+        <div class="card">
+            <h2>The Wedding of</h2>
+            <h1>Richard Allum</h1> 
+            <h1>&</h1> 
+            <h1>Janine Solomon</h1>
+            <p>It's come around quickly since the proposal (and no, Janine isn't pregnant... hopefully soon!)</p>
+            <p>We are just so excited to start our lives together and to celebrate this special day with you.</p>
+            <div id="countdown"></div>
+            <br>until <i>"I do"</i>
+        </div>
+    </section>
+
+<section id="photos">
+  <div class="card">
+    <h2>Two Wonderful Years Together...</h2>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="photo6.jpg"><img src="photo2.jpg"><img src="photo7.jpg">
+        <img src="photo4.jpg"><img src="photo21.jpg"><img src="photo1.jpg">
+        <img src="photo3.jpg"><img src="photo8.jpg"><img src="photo9.jpg">
+        <img src="photo24.jpg"><img src="photo12.jpg">
+        <img src="photo13.jpg"><img src="photo14.jpg"><img src="photo18.jpg">
+        <img src="photo23.jpg"><img src="photo17.jpg"><img src="photo15.jpg">
+        <img src="photo19.jpg"><img src="photo20.jpg"><img src="photo5.jpg">
+        <img src="photo22.jpg"><img src="photo16.jpg"><img src="photo10.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="location">
+      <div class="card"> 
+        <h2>The Venue</h2>
+        <h1>Braintree Town Hall</h1>
+        <p>20 February 2026<br>11:30 am – 1:45 pm</p>
+        <div style="margin-top: 20px; margin-bottom: 10px;"> 
+          <img src="braintree-town-hall.png">
+        </div>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+          <a id="addToGoogle" class="btn" target="_blank">Add to Google Calendar</a>
+          <a class="btn" href="wedding.ics" download>Add to Apple/Outlook</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <div class="card">
+        <h2>Presence</h2>
+        <h1>Kindly RSVP</h1>
+        <p>Please let us know if you can attend by January 30th.</p>
+        <div style="width:100%; height: auto; -webkit-overflow-scrolling: touch;">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfYji_EgqnbCaxUi9CU8a_fGaO2FQa-A11b9GMM1lzZ96njug/viewform?embedded=true" 
+  width="100%" 
+  height="800" 
+  frameborder="0" 
+  scrolling="yes">Loading…</iframe>
+</div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="card">
+        <h2>Schedule</h2>
+        <h1>Order of Service</h1>
+        
+        <h3>The Ceremony</h3>
+        <div class="schedule-item">
+          <span class="time">11:30 AM | Arrival</span>
+          <p>Please join us in the Chairman’s Room. Enjoy the music by Claire Hamer and take a moment to contribute to our wedding memorabilia.</p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">12:00 PM | The Ceremony</span>
+          <p style="font-size: 15px;">
+            <i>The Entrance of the Bride:</i> Salut d’Amour (Sir Edward Elgar)<br>
+            <i>The Signing of the Register:</i> Romeo and Juliet Balcony Scene (Craig Armstrong)<br>
+            <i>The Recessional:</i> Arrival of the Queen of Sheba (George Frideric Handel)
+          </p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">12:30 PM | Photos</span>
+          <p>Please remain for photos in the Chairman’s Room, followed by group photos on the staircase and the front steps.</p>
+        </div>
+
+        <h3>The Reception</h3>
+        <div class="schedule-item">
+          <span class="time">12:45 PM | Drinks Reception</span>
+          <p>Please make your way to the Council Chamber for refreshments.</p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">12:50 PM | The First Dance</span>
+          <p>Join us as we make our entrance as Mr. and Mrs. Allum</p>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">12:55 PM | Cutting of the Cake & Speeches</span>
+        </div>
+
+        <div class="schedule-item">
+          <span class="time">1:45 PM | A Continued Celebration</span>
+          <p>The celebration at the Town Hall concludes. You are all invited to join us at our home directly afterwards to continue the celebration!</p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--champagne); margin: 40px 0;">
+
+        <h2>The After Party</h2>
+        <h1>Our Home</h1>
+        <p>13 Normanhurst, Hutton</p>
+        <div style="margin: 20px 0;">
+          <img src="13 Normanhurst.png">
+        </div>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=13+Normanhurst+Hutton" target="_blank">Open in Google Maps</a>
+        <p style="font-size: 14px; background: rgba(130, 128, 100, 0.1); padding: 15px; border-radius: 4px; border-left: 4px solid var(--accent-green); margin-top: 20px;">
+          <strong>Parking Note:</strong> Parking on our side of the road is permitted from 11am and on the opposite side of the road from 3pm.
+        </p>
+      </div>
+    </section>
+
+    <section id="dress">
+      <div class="card">
+        <h2>Casual/Formal Dress</h2>
+        <h1>Colour Style</h1>
+        <div style="margin-top: 20px;"><img src="colour palate.png"></div>
+        <div style="margin-top: 20px;"><img src="dress code.png"></div>
+      </div>
+    </section>
+      
+    <section id="giving">
+  <div class="card">
+    <h1>Gifting</h1>
+    <p>Your presence is all we ask. Should you wish to honour us with a gift, a contribution towards our kitchen essentials would be most appreciated.</p>
+    <p><b>We have the love, now we just need the plates and cutlery!</b></p> 
+    <p>We look forward to stocking our home with the tools for a lifetime of shared meals and memories.</p>
+    <div style="margin: 10px 0;">
+        <img src="plates and cutlery.jpg" alt="Plates and Cutlery">
+    </div>
+    <a class="btn" href="https://www.paypal.me/RichardJanineAllum" target="_blank">Give by PayPal</a>
+  </div>
+</section>
+
+    <section id="Boba">
+      <div class="card">
+        <h2>just one more thing...</h2>
+        <h1>Boba</h1>
+        <div style="margin-top: 10px; margin-bottom: 40px;"> 
+          <img src="boba.png" style="width:80%; max-width:500px;">
+        </div>
+        <p style="margin-bottom: 40px;">You didn't think we would leave him out did you? As you know he comes with us everywhere and you'll be in for a little surprise.</p>
+      </div>
+    </section>
+
+    <section id="with-love">
+    <div class="card">
+        <h2>With love</h2>
+        <div style="margin-bottom: 20px;">
+            <img src="signiture.png" style="width: 100%; max-width: 400px; height: auto; margin: 0 auto 20px auto; display: block;">
+        </div>
+        <div class="video-container">
+            <iframe 
+                id="weddingVideo" 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/Mm_P1QavLRw?enablejsapi=1&mute=1&controls=0&loop=1&playlist=Mm_P1QavLRw" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+</div>
+
+<nav id="bottomNav">
+  <a href="#location">Venue</a>
+  <a href="#rsvp">RSVP</a>
+  <a href="#giving">Gifting</a>
+</nav>
+
+<script>
+function openInvite() {
+  const music = document.getElementById("music");
+
+
+  // 2. Start transition
+  document.getElementById("envelope").style.opacity = "0";
+  
+  setTimeout(() => {
+    document.getElementById("envelope").style.display = "none";
+    
+    // 3. Reset Body state
+    document.body.classList.remove("invite-closed");
+    // Force the scroll to the top and prevent the "jump" zoom
+    window.scrollTo(0, 0); 
+    
+    document.getElementById("bottomNav").style.display = "flex";
+    
+    // 4. Play Music
+    if (music) {
+      music.play().catch(e => {
+        console.log("Music will play on next tap");
+      });
+    }
+  }, 800);
+}
+
+// Countdown Logic
+const weddingDate = new Date("2026-02-20T11:30:00").getTime();
+function updateCountdown() {
+  const diff = weddingDate - new Date().getTime();
+  if (diff < 0) { 
+    document.getElementById("countdown").innerHTML = "Today is the day!"; 
+    return; 
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hrs = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("countdown").innerHTML = `
+    <div class="count"><span>${days}</span><div class="count-label">Days</div></div>
+    <div class="count"><span>${hrs}</span><div class="count-label">Hours</div></div>
+    <div class="count"><span>${mins}</span><div class="count-label">Mins</div></div>`;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Calendar Link
+document.getElementById("addToGoogle").href = "https://www.google.com/calendar/render?action=TEMPLATE&text=Richard+%26+Janine+Wedding&dates=20260220T113000/20260220T134500&location=Braintree+Town+Hall";
+
+// Video Intersection Observer
+const videoIframe = document.getElementById('weddingVideo');
+const playObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        if (entry.isIntersecting) {
+          videoIframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        }
+      }, 1000); 
+    } else {
+      videoIframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  });
+}, { threshold: 0.5 });
+
+if (videoIframe) {
+  playObserver.observe(videoIframe);
+}
+
+// Visibility Handler: Stop music when user leaves the tab
+document.addEventListener("visibilitychange", function() {
+  const music = document.getElementById("music");
+  if (document.hidden) {
+    if (music) music.pause();
+  } else {
+    // Only resume if the envelope is already gone
+    if (document.getElementById("envelope").style.display === "none") {
+      if (music) music.play().catch(e => console.log("Resume blocked"));
+    }
+  }
+});
+</script>
+
+  
+</body>
+</html>
