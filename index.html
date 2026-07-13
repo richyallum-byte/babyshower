@@ -21,8 +21,16 @@
     width: 100%; 
     min-height: 100vh;
     font-family: var(--main-font);
-    background-color: #fdfbf7;
     overflow-x: hidden;
+  }
+
+  /* Static background with overlay for readability */
+  body {
+    background-image: linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.85)), url("baby.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   body.invite-closed { overflow: hidden; height: 100vh; }
@@ -32,16 +40,15 @@
   section { display: flex; justify-content: center; margin-bottom: 20px; }
 
   .card {
-    background: var(--white); /* Solid white, no transparency */
+    background: var(--white); 
     width: 100%; 
     max-width: 600px; 
     padding: 30px;
     border-radius: 15px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Standard shadow, not wonky */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
     text-align: center;
   }
 
-  /* Centered images */
   .card img { 
     display: block; 
     margin: 20px auto; 
@@ -51,7 +58,7 @@
   }
 
   h1 { font-size: 28px; margin-bottom: 15px; color: var(--ink); }
-  h2 { font-size: 18px; color: var(--accent-green); margin-bottom: 10px; }
+  h2 { font-size: 18px; color: var(--accent-green); margin-bottom: 10px; text-transform: uppercase; }
   p { font-size: 18px; line-height: 1.6; color: #555; margin-bottom: 20px; }
 
   .btn {
@@ -63,13 +70,20 @@
     position: fixed; inset: 0; display: flex; justify-content: center; align-items: center;
     background: #fdfbf7; z-index: 9999; transition: opacity 0.8s ease;
   }
+
+  /* Energetic balloon movement */
+  .balloon-wrapper { cursor: pointer; text-align: center; animation: super-bounce 1s infinite ease-in-out; }
+  @keyframes super-bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-50px) scale(1.1); }
+  }
 </style>
 </head>
 
 <body class="invite-closed">
 
 <div id="envelope">
-  <div style="cursor: pointer; text-align: center;" onclick="openInvite()">
+  <div class="balloon-wrapper" onclick="openInvite()">
     <div style="font-size: 80px;">🎈</div>
     <p>Pop to enter</p>
   </div>
@@ -78,8 +92,8 @@
 <div class="content-wrapper">
   <section>
     <div class="card">
-      <img src="bunting.jpeg" alt="Bunting">
       <h2>One Baby Shower and Two Birthdays</h2>
+      <img src="bunting.jpeg" alt="Bunting">
       <h1>Saturday</h1>
       <h1>18th August 2026</h1>
       <h1>3pm onwards</h1>
@@ -97,7 +111,6 @@
       <a class="btn" href="https://mycrib.uk/baby-allum-wishlist" target="_blank">Baby Registry</a>
     </div>
   </section>
-</div>
 
   <section id="location">
     <div class="card">  
@@ -114,6 +127,7 @@
       <img src="richardjanine.png" alt="Richard and Janine">
     </div>
   </section>
+</div>
 
 <script>
 function openInvite() {
