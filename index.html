@@ -24,13 +24,14 @@
     overflow-x: hidden;
   }
 
- /* Static background with full opacity */
+ /* Static background, full image shown, no stretching */
   body {
     background-image: url("baby.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; /* This makes it stay static */
-    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto;        /* Shows image at original proportions */
+    background-attachment: fixed; /* Keeps it static while scrolling */
+    background-repeat: repeat;    /* Repeats the pattern if the screen is larger than the image */
+    background-color: #fdfbf7;    /* Fallback color */
   }
 
   body.invite-closed { overflow: hidden; height: 100vh; }
@@ -100,7 +101,7 @@ h1 {
       <h2>One Baby Shower and Two Birthdays</h2>
       <img src="bunting.jpeg" alt="Bunting">
       <h1>Saturday</h1>
-      <h1>18th August 2026</h1>
+      <h1>8th August 2026</h1>
       <h1>3pm onwards</h1>
       <p>Join us at our place for barbeque, desserts and games all in one! The gender reveal will be about 5pm. If you have a favourite dish you'd love to share, feel free to bring it along. Kids are more than welcome to join 🧸</p>
     </div>
