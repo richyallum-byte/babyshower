@@ -90,6 +90,13 @@ section { padding: 40px 20px; display: flex; justify-content: center; text-align
   object-fit: contain !important;
 }
 
+  .full-width-img {
+  width: calc(100% + 40px); /* Extends it to the edges of the padding */
+  margin-left: -20px;       /* Negates the card's inner padding */
+  margin-right: -20px;      /* Negates the card's inner padding */
+  display: block;
+}
+  
 /* CAROUSEL IMAGE RESET */
 .carousel img {
   width: 70vw !important; margin: 0 !important; outline: none !important;
