@@ -138,18 +138,22 @@
 </div>
 
 <script>
+// 1. This listener stays outside the function to watch for tab changes
+document.addEventListener("visibilitychange", () => {
+  const music = document.getElementById("bg-music");
+  if (document.hidden) {
+    music.pause();
+  } else {
+    // Optional: resume if they come back
+    // music.play().catch(e => console.log("Resume blocked"));
+  }
+});
+
+// 2. This is your existing function, now clean and functional
 function openInvite() {
   const env = document.getElementById("envelope");
   const music = document.getElementById("bg-music");
 
-// If the document is hidden, pause the music
-  if (document.hidden) {
-    music.pause();
-  } 
-  // Optional: If you want it to resume when they come back, 
-  // you can add an 'else' block here.
-});
-  
   music.volume = 1.0;
   music.play().catch(e => console.log("Music blocked by browser policy"));
 
