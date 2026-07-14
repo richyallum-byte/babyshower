@@ -17,16 +17,29 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  background-image: url("baby.jpeg");
-  background-attachment: fixed; /* This is the key for non-jumping backgrounds */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+/* Update these specific blocks */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%; /* Keep this for compatibility */
+  overflow-x: hidden;
 }
 
 .bg-fixed {
-  display: none; /* Remove your old div if you do this */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Modern standard */
+  z-index: -1;
+  background-image: url("baby.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* This prevents the background from attempting to resize when you scroll */
+  will-change: transform; 
 }
 
   body.invite-closed { overflow: hidden; height: 100vh; }
