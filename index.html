@@ -28,7 +28,7 @@
 
   <!-- Music -->
 <audio id="bg-music" loop>
-  <source src="My Baby Just Care For Me.m4a" type="audio/mpeg">
+  <source src="My Baby Just Care For Me.m4a" type="audio/mp4">
 </audio>
   
   .bg-fixed {
@@ -164,7 +164,7 @@ function openInvite() {
   const music = document.getElementById("bg-music");
   
   // Play music
-  music.volume = 0.5; // Set volume to 50%
+  music.volume = 1.0; // Set volume to 50%
   music.play().catch(e => console.log("Autoplay prevented by browser"));
 
   env.style.opacity = "0";
