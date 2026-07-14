@@ -8,7 +8,7 @@
 
 <style>
   :root {
-    --white: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    --white: rgba(255, 255, 255, 0.9);
     --accent-red: #D8A4A4;
     --accent-green: #7A9E96;
     --ink: #333;
@@ -17,7 +17,6 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* Changed background-color to transparent */
   html, body { 
     width: 100%; 
     min-height: 100vh;
@@ -25,11 +24,6 @@
     overflow-x: hidden;
     background-color: transparent; 
   }
-
-  <!-- Music -->
-<audio id="bg-music" loop>
-  <source src="My Baby Just Care For Me.m4a" type="audio/mp4">
-</audio>
   
   .bg-fixed {
     position: fixed;
@@ -40,7 +34,7 @@
     z-index: -1; 
     background-image: url("baby.jpeg");
     background-position: center center;
-    background-size: cover; /* Ensures image fills screen nicely */
+    background-size: cover;
     background-repeat: no-repeat;
   }
 
@@ -51,8 +45,8 @@
   section { display: flex; justify-content: center; margin-bottom: 20px; }
 
   .card {
-    background: var(--white); /* Now semi-transparent */
-    backdrop-filter: blur(5px); /* Adds a nice frosted look */
+    background: var(--white); 
+    backdrop-filter: blur(5px); 
     width: 100%; 
     max-width: 600px; 
     padding: 30px;
@@ -61,29 +55,10 @@
     text-align: center;
   }
 
-  .card img { 
-    display: block; 
-    margin: 20px auto; 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 8px;
-  }
+  .card img { display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 8px; }
 
-  h1 { 
-    font-size: 28px; 
-    margin-bottom: 15px; 
-    color: #B69FD1; 
-    text-shadow: 0px 1px 1px rgba(0,0,0,0.1); 
-  }
-  
-  h2 { 
-    font-size: 18px; 
-    color: #D4AF37; /* Slightly darker gold/yellow for better visibility on light cards */
-    text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
-    margin-bottom: 10px; 
-    text-transform: uppercase; 
-  }
-  
+  h1 { font-size: 28px; margin-bottom: 15px; color: #B69FD1; text-shadow: 0px 1px 1px rgba(0,0,0,0.1); }
+  h2 { font-size: 18px; color: #D4AF37; text-shadow: 0px 1px 1px rgba(255,255,255,0.5); margin-bottom: 10px; text-transform: uppercase; }
   p { font-size: 18px; line-height: 1.6; color: #444; margin-bottom: 20px; }
 
   .btn {
@@ -106,6 +81,11 @@
 
 <body class="invite-closed">
 
+<!-- Audio Moved Here -->
+<audio id="bg-music" loop>
+  <source src="My Baby Just Care For Me.m4a" type="audio/mp4">
+</audio>
+
 <div class="bg-fixed"></div>
 
 <div id="envelope">
@@ -116,12 +96,12 @@
 </div>
 
 <div class="content-wrapper">
-  
+  <!-- Content remains exactly the same as you had it -->
   <section>
     <div class="card">
       <h2>One Baby Shower</h2> 
-        <h2>and Two Birthdays</h2>
-            <img src="bunting.jpeg" alt="Bunting">
+      <h2>and Two Birthdays</h2>
+      <img src="bunting.jpeg" alt="Bunting">
       <h1>Saturday</h1>
       <h1>8th August 2026</h1>
       <h1>3pm onwards</h1>
@@ -156,16 +136,14 @@
     </div>
   </section>
 </div>
-</div>
 
 <script>
 function openInvite() {
   const env = document.getElementById("envelope");
   const music = document.getElementById("bg-music");
   
-  // Play music
-  music.volume = 1.0; // Set volume to 50%
-  music.play().catch(e => console.log("Autoplay prevented by browser"));
+  music.volume = 0.5;
+  music.play().catch(e => console.log("Music blocked by browser policy"));
 
   env.style.opacity = "0";
   setTimeout(() => {
