@@ -141,8 +141,16 @@
 function openInvite() {
   const env = document.getElementById("envelope");
   const music = document.getElementById("bg-music");
+
+// If the document is hidden, pause the music
+  if (document.hidden) {
+    music.pause();
+  } 
+  // Optional: If you want it to resume when they come back, 
+  // you can add an 'else' block here.
+});
   
-  music.volume = 0.5;
+  music.volume = 1.0;
   music.play().catch(e => console.log("Music blocked by browser policy"));
 
   env.style.opacity = "0";
